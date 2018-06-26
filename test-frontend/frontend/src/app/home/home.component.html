@@ -1,0 +1,55 @@
+  <h1>Cryptocurrency Portfolio</h1>
+<div class='red' [hidden]='logged_in'>Login or signup to use</div>
+  <form [formGroup]="authForm" >
+
+    username <input formControlName="username"  placeholder="username">
+      <br>
+    password: <input formControlName="password"  placeholder="password">
+  <button type="submit" (click)="onLogin(authForm.value)">login</button>
+  <button type="submit" (click)="onSignup(authForm.value)">signup</button>
+
+</form>
+  <img alt="Logo" src="../../assets/images/crypto.png">
+
+
+<h2> Balance: {{logger}}</h2>
+<h2> Cryptos: <h2>
+  <h4> BTC: {{btc_balance}}</h4>
+  <h4> ETH: {{eth_balance}}</h4>
+  <h4> LTC: {{ltc_balance}}</h4>
+  <h4> XRP: {{xrp_balance}}</h4>
+
+<h3>Current-Prices:     BTC:{{btc | slice:0:7}}     |      ETH:{{eth | slice:0:6}}    |    LTC:{{ltc | slice:0:6}}</h3>
+<br><br>
+
+<div *ngIf="logged_in">
+<div class='border'>
+BUY:
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+
+    Currency: <input formControlName="crypto"  placeholder="Symbol">
+      <br>
+    Amount(USD): <input formControlName="amount"  placeholder="$USD">
+  <button type="submit">Submit</button>
+
+</form>
+</div>
+<br><br>
+<div class='border'>
+SELL:
+<form [formGroup]="myForm1" (ngSubmit)="onSubmit1(myForm1.value)">
+
+  Currency: <input formControlName="crypto_sell"  placeholder="Symbol">
+    <br>
+  Amount(Crypto): <input formControlName="amount_sell"  placeholder="BTC/ETH/LTC amount">
+<button type="submit">Submit</button>
+
+</form>
+</div>
+</div>
+<h3> Logging:</h3>
+<div class="jumbotron">
+<div class="logs">  {{log}}
+  {{response}}
+</div>
+</div>

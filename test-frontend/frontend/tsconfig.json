@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "noImplicitAny": false,
+    "allowJs": true,
+    "outDir": "./temp",
+    "lib": [
+      "dom",
+      "es6"
+    ],
+    "types": [
+      "jasmine",
+      "node"
+    ]
+  },
+
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "exclude": [
+    "./node_modules",
+    "./dist",
+    "./aot",
+    "./src/main-aot.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}

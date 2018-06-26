@@ -1,0 +1,16 @@
+dist: trusty
+sudo: false
+
+language: node_js
+
+node_js:
+  - "stable"
+
+addons:
+  apt:
+    packages:
+      - google-chrome-stable
+
+script:
+  - npm test
+  - npm run build

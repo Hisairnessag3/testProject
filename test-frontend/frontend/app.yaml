@@ -1,0 +1,39 @@
+runtime: python27
+threadsafe: true
+api_version: 1
+
+handlers:
+- url: /(.*\.(gif|png|jpeg|jpg|css|js|ico|scss))$
+  static_files: dist/\1
+  upload: dist/(.*)
+
+- url: /(.*)
+  static_files: dist/index.html
+  upload: dist/index.html
+  http_headers:
+    Strict-Transport-Security: max-age=31536000; includeSubDomains
+    X-Frame-Options: DENY
+
+skip_files:
+- ^(node_modules/.*)
+- ^(bower_components/.*)
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*\.py[co]$
+- ^(.*/)?.*/RCS/.*$
+- ^(.*/)?\..*$
+- ^(.*/)?\.bak$
+- ^node_modules$
+- ^app\.yaml
+- ^README\..*
+- \.gitignore
+- ^\.git$
+- ^grunt\.js
+- ^src$
+- ^e2e$
+- \.editorconfig
+- ^karma\.config\.js
+- ^package\.json
+- ^protractor\.conf\.js
+- ^tslint\.json
+# [START runtime]
