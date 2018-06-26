@@ -1,0 +1,10 @@
+git+https://github.com/bartosh/backtrader.git@ccxt
+ccxt==1.10.1276
+Flask_RESTful==0.3.6
+Flask==0.12.2
+Flask_Session>=0.3.0
+Flask_Cors==3.0.3
+gevent>=1.2.0
+tinydb==3.9.0.post1
+gunicorn>=19.7.1
+flask_socketio>=0.2
